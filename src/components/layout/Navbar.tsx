@@ -32,16 +32,16 @@ const Navbar = ({ onScrollTo = () => {} }: NavbarProps) => {
     // Navigate to the appropriate page instead of scrolling
     switch (section) {
       case "home":
-        window.location.href = "HireDriver/";
+        window.location.href = "/";
         break;
       case "about":
-        window.location.href = "HireDriver/about";
+        window.location.href = "/about";
         break;
       case "services":
-        window.location.href = "HireDriver/services";
+        window.location.href = "/services";
         break;
       case "contact":
-        window.location.href = "HireDriver/contact";
+        window.location.href = "/contact";
         break;
       default:
         onScrollTo(section);
