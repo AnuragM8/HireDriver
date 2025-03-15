@@ -40,7 +40,7 @@ const ServicesSection = ({
       title: "Standard Driver Service",
       description:
         "Professional drivers for your daily commute and local travel needs",
-      image: "/ser1.jpeg", // Updated to use public folder
+      image: "./ser1.jpeg", // Changed to relative path
       features: [
         "Experienced and verified drivers",
         "Punctual and reliable service",
@@ -60,7 +60,7 @@ const ServicesSection = ({
       title: "Out of Station Service",
       description:
         "Reliable drivers for your intercity travel and long journeys",
-      image: "/ser2.jpeg", // Updated to use public folder
+      image: "./ser2.jpeg", // Changed to relative path
       features: [
         "Highway experienced drivers",
         "Multi-day booking options",
@@ -77,7 +77,7 @@ const ServicesSection = ({
       title: "Full-Time Driver Service",
       description:
         "Hire professional drivers on a full-time basis for daily travel needs.",
-      image: "/ser3.jpeg", // Updated to use public folder
+      image: "./ser3.jpeg", // Changed to relative path
       features: [
         "Monthly salaried drivers",
         "Background verified professionals",
@@ -94,7 +94,7 @@ const ServicesSection = ({
       title: "Corporate Driver Solutions",
       description:
         "Dedicated drivers for businesses and corporate requirements",
-      image: "/ser4.jpeg", // Updated to use public folder
+      image: "./ser4.jpeg", // Changed to relative path
       features: [
         "Dedicated corporate accounts",
         "Multiple vehicle support",

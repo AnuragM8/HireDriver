@@ -46,7 +46,7 @@ const ServiceCard = ({
     <Card className="w-full max-w-[350px] overflow-hidden transition-all duration-300 hover:shadow-lg bg-white">
       <div className="relative h-48 w-full overflow-hidden">
         <img
-          src={imageUrl}
+          src={`./${imageUrl}`} // Ensure relative path
           alt={title}
           className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
         />

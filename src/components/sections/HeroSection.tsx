@@ -14,7 +14,7 @@ const HeroSection = ({
   headline = "Surya Driver Services",
   subheadline = "Professional chauffeurs to provide exceptional service for all your transportation needs",
   ctaText = "Hire Now",
-  backgroundImage = "/home.jpg",
+  backgroundImage = "./home.jpg", // Changed to relative path
   onCtaClick = () => console.log("CTA clicked"),
 }: HeroSectionProps) => {
   return (
