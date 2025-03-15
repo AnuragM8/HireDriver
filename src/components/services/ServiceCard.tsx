@@ -39,14 +39,14 @@ const ServiceCard = ({
     { id: "4", name: "Wi-Fi available" },
   ],
   popular = false,
-  imageUrl = "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
+  imageUrl = "/ser1.jpeg",
   onSelect = () => console.log("Service selected"),
 }: ServiceCardProps) => {
   return (
     <Card className="w-full max-w-[350px] overflow-hidden transition-all duration-300 hover:shadow-lg bg-white">
       <div className="relative h-48 w-full overflow-hidden">
         <img
-          src={`./${imageUrl}`} // Ensure relative path
+          src={imageUrl}
           alt={title}
           className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
         />

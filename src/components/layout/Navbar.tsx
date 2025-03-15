@@ -3,18 +3,22 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface NavbarProps {
   onScrollTo?: (section: string) => void;
 }
 
 const Navbar = ({ onScrollTo = () => {} }: NavbarProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", section: "home" },
-    { name: "Services & Charges", section: "services" },
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Contact", path: "/contact" }
   ];
 
   useEffect(() => {
@@ -26,26 +30,9 @@ const Navbar = ({ onScrollTo = () => {} }: NavbarProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (section: string) => {
+  const handleNavClick = (path: string) => {
     setIsMobileMenuOpen(false);
-
-    // Navigate to the appropriate page instead of scrolling
-    switch (section) {
-      case "home":
-        window.location.href = "/";
-        break;
-      case "about":
-        window.location.href = "/about";
-        break;
-      case "services":
-        window.location.href = "/services";
-        break;
-      case "contact":
-        window.location.href = "/contact";
-        break;
-      default:
-        onScrollTo(section);
-    }
+    navigate(path);
   };
 
   return (
@@ -57,23 +44,25 @@ const Navbar = ({ onScrollTo = () => {} }: NavbarProps) => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-primary">Surya Driver Services</h1>
+          <button onClick={() => handleNavClick("/")} className="text-2xl font-bold text-primary">
+            Surya Driver Services
+          </button>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <button
-              key={link.section}
-              onClick={() => handleNavClick(link.section)}
-              className="text-gray-700 hover:text-primary font-medium transition-colors duration-200"
+              key={link.path}
+              onClick={() => handleNavClick(link.path)}
+              className={cn(
+                "text-gray-700 hover:text-primary font-medium transition-colors duration-200",
+                location.pathname === link.path && "text-primary"
+              )}
             >
               {link.name}
             </button>
           ))}
-          <Button onClick={() => handleNavClick("contact")} className="ml-4">
-            Contact Us
-          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -99,20 +88,17 @@ const Navbar = ({ onScrollTo = () => {} }: NavbarProps) => {
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <button
-                  key={link.section}
-                  onClick={() => handleNavClick(link.section)}
-                  className="text-gray-700 hover:text-primary font-medium py-2 transition-colors duration-200 text-left flex items-center justify-between"
+                  key={link.path}
+                  onClick={() => handleNavClick(link.path)}
+                  className={cn(
+                    "text-gray-700 hover:text-primary font-medium py-2 transition-colors duration-200 text-left flex items-center justify-between",
+                    location.pathname === link.path && "text-primary"
+                  )}
                 >
                   {link.name}
                   <ChevronDown size={16} />
                 </button>
               ))}
-              <Button
-                onClick={() => handleNavClick("contact")}
-                className="w-full mt-4"
-              >
-                Contact Us
-              </Button>
             </div>
           </motion.div>
         )}
