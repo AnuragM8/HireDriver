@@ -13,12 +13,13 @@ if (process.env.TEMPO === "true") {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === "development" ? "/" : process.env.VITE_BASE_PATH || "/",
+  base: process.env.NODE_ENV === "development" ? "/" : "/HireDriver/",
   optimizeDeps: {
     entries: ["src/main.tsx", "src/tempobook/**/*"],
   },
   build: {
     rollupOptions: {
+      external: [], // Ensure `tailwind-merge` is not listed here
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'], // Split vendor libraries
