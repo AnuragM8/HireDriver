@@ -13,7 +13,7 @@ if (process.env.TEMPO === "true") {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === "development" ? "/" : "/HireDriver/",
+  base: "./",
   optimizeDeps: {
     entries: ["src/main.tsx", "src/tempobook/**/*"],
   },
