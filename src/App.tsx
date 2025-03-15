@@ -6,6 +6,9 @@ const ServicesPage = lazy(() => import("./pages/services"));
 const ContactPage = lazy(() => import("./pages/contact"));
 
 function App() {
+  // Get the base URL from the environment or default to /HireDriver/ for GitHub Pages
+  const basename = process.env.NODE_ENV === "development" ? "/" : "/HireDriver";
+
   return (
     <Suspense
       fallback={
@@ -14,15 +17,14 @@ function App() {
         </div>
       }
     >
-      <>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<Navigate to="/" />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/booking" element={<Navigate to="/contact" />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<Navigate to="/" />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/booking" element={<Navigate to="/contact" />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </Suspense>
   );
 }
