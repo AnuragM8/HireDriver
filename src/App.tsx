@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 const HomePage = lazy(() => import("./pages/index"));
 const ServicesPage = lazy(() => import("./pages/services"));
 const ContactPage = lazy(() => import("./pages/contact"));
+const AboutPage = lazy(() => import("./pages/about"));
 
 function App() {
   // Get the base URL from the environment or default to /HireDriver/ for GitHub Pages
@@ -19,7 +20,7 @@ function App() {
     >
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<Navigate to="/" />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/booking" element={<Navigate to="/contact" />} />
         <Route path="/contact" element={<ContactPage />} />

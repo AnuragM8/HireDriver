@@ -17,7 +17,8 @@ const Navbar = ({ onScrollTo = () => {} }: NavbarProps) => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
+    { name: "About Us", path: "/about" },
+    { name: "Service & Prices", path: "/services" },
     { name: "Contact", path: "/contact" }
   ];
 

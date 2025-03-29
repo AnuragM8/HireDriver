@@ -53,6 +53,24 @@ const HeroSection = ({
             {subheadline}
           </motion.p>
 
+          {/* Feature Badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex flex-wrap justify-center gap-4 mb-8"
+          >
+            <div className="bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full">
+              <span className="text-lg text-white">Professional Drivers</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full">
+              <span className="text-lg text-white">24/7 Service</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full">
+              <span className="text-lg text-white">Trusted Experience</span>
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
