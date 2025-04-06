@@ -37,7 +37,7 @@ const AboutUs = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/2.jpg" 
+            src="./2.jpg" 
             alt="Professional driver service" 
             className="w-full h-full object-cover object-center"
           />
