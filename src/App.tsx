@@ -63,13 +63,13 @@ function App() {
           position: absolute;
           left: -10px;
           right: auto;
-          bottom: 18px;
+          bottom: 70px;
           background: rgba(20,30,50,0.97);
           color: #fff;
-          font-size: 1.01rem;
+          font-size: 1rem;
           font-weight: 700;
-          border-radius: 16px 16px 16px 16px;
-          padding: 12px 20px;
+          border-radius: 13px 13px 13px 13px;
+          padding: 10px 12px;
           box-shadow: 0 2px 16px rgba(11,35,65,0.18), 0 0 0 1.5px #223a5e;
           min-width: 190px;
           max-width: 250px;
@@ -86,43 +86,27 @@ function App() {
         }
         .call-btn-bubble.show {
           opacity: 1;
-          transform: translateX(-100%) translateY(0) scale(1);
+          transform: translateX(-80%) translateY(0) scale(1);
         }
         .call-btn-bubble:after {
           content: '';
           position: absolute;
-          left: 100%;
-          bottom: 15px;
+          
+          left: 90%;
+          right: auto;
+          bottom: -14px;
+          transform: translateX(-50%) rotate(90deg);
+          border-top: none;
+          border-left: 13px solid rgba(20,30,50,0.97);
+          border-bottom: 8px solid transparent;
+          border-right: 13px solid transparent;
           width: 0;
           height: 0;
-          border-top: 8px solid transparent;
-          border-bottom: 8px solid transparent;
-          border-left: 13px solid rgba(20,30,50,0.97);
         }
         @media (max-width: 600px) {
           .call-btn-bubble {
-            left: 50%;
-            right: auto;
-            bottom: 70px;
-            transform: translate(-50%, 0) scale(1);
-            min-width: 150px;
-            max-width: 90vw;
             font-size: 0.93rem;
             padding: 10px 12px;
-            border-radius: 13px 13px 13px 13px;
-            word-break: break-word;
-          }
-          .call-btn-bubble:after {
-            left: 90%;
-            right: auto;
-            bottom: -14px;
-            transform: translateX(-50%) rotate(90deg);
-            border-top: none;
-            border-left: 13px solid rgba(20,30,50,0.97);
-            border-bottom: 8px solid transparent;
-            border-right: 13px solid transparent;
-            width: 0;
-            height: 0;
           }
         }
       `}</style>
@@ -143,7 +127,7 @@ function App() {
         </Routes>
       </Suspense>
       {/* Stylish Floating Phone Call Button with animated phone icon and message bubble */}
-      <div style={{ position: "fixed", right: 0, bottom: 0, zIndex: 1000 }}>
+      <div style={{ position: "fixed", right: 20, bottom: 20, zIndex: 1000 }}>
         <div className={`call-btn-bubble${showMsg ? " show" : ""}`}>{callMessages[msgIdx]}</div>
         <a
           href="tel:+1234567890"
