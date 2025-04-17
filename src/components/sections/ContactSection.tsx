@@ -60,7 +60,7 @@ const ContactSection = ({
       .then(() => {
         setIsSubmitted(true); // Disable button and update text
         setShowToast(true); // Show toast
-        setTimeout(() => setShowToast(false), 1000); // Hide toast after 5 seconds
+        setTimeout(() => setShowToast(false), 4000); // Hide toast after 5 seconds
       })
       .catch((error) => {
         console.error("Form submission error:", error);
@@ -170,7 +170,7 @@ const ContactSection = ({
         </div>
       </div>
       {showToast && (
-        <div className="fixed bottom-4 right-4 bg-green-500 text-white py-2 px-4 rounded shadow-lg">
+        <div className="fixed top-20 right-4 bg-green-500 text-white py-2 px-4 rounded shadow-lg">
           We have received your request. We will reach out to you shortly.
         </div>
       )}
