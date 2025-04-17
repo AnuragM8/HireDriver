@@ -77,7 +77,7 @@ function App() {
           word-break: break-word;
           pointer-events: none;
           opacity: 0;
-          transform: translateX(-100%) translateY(12px) scale(0.97);
+          transform: translateX(-30px) translateY(60px) scale(0.1);
           transition: opacity 0.5s, transform 0.5s;
           z-index: 1010;
           display: flex;
@@ -91,7 +91,6 @@ function App() {
         .call-btn-bubble:after {
           content: '';
           position: absolute;
-          
           left: 90%;
           right: auto;
           bottom: -14px;
