@@ -5,6 +5,7 @@ const HomePage = lazy(() => import("./pages/index"));
 const ServicesPage = lazy(() => import("./pages/services"));
 const ContactPage = lazy(() => import("./pages/contact"));
 const AboutPage = lazy(() => import("./pages/about"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function App() {
   // Get the base URL from the environment or default to /HireDriver/ for GitHub Pages
@@ -24,7 +25,7 @@ function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/booking" element={<Navigate to="/contact" />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );
